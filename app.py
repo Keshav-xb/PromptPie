@@ -18,9 +18,9 @@ st.markdown("""
 
         .top-left-logo {
             position: absolute;
-            top: 10px;
-            left: 10px;
-            z-index: 999;
+            top: 100px;
+            left: 100px;
+            z-index: 9999;
         }
 
         /* Push page content slightly down */

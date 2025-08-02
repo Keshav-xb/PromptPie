@@ -90,14 +90,15 @@ if selected == "Home":
 
             for i in range(5):
                 data = generate_prompt(topic)
-            block = f"""
+                block = f"""
 <div style='font-size: 15px; line-height: 1.6;'>
     <span style='font-size: 18px; font-weight: bold; color: #2563eb;'>Prompt {i+1}</span><br><br>
 
-<span class='output-section-title'>1. Prompt:</span> {data['prompt']}  
-<span class='output-section-title'>2. Hook:</span> {data['hook']}  
-<span class='output-section-title'>3. Hashtags:</span> {data['hashtags']}  
----
+    <span style='font-weight: bold;'>1. Prompt:</span> {data['prompt']}<br>
+    <span style='font-weight: bold;'>2. Hook:</span> {data['hook']}<br>
+    <span style='font-weight: bold;'>3. Hashtags:</span> {data['hashtags']}<br>
+    <hr>
+</div>
 """
                 prompts_output += block
                 st.markdown(block, unsafe_allow_html=True)

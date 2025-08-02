@@ -6,7 +6,6 @@ st.set_page_config(
     page_title="PromptPie",
     page_icon="🧠",
     layout="wide"
-)
 st.markdown("""
     <style>
         #MainMenu {visibility: hidden;}
@@ -22,9 +21,8 @@ st.markdown("""
         }
 
         .header-container img {
-            height: 90px;
-            max-height: 90px;
-}
+            height: 100px;
+            max-height: 100px;
         }
     </style>
 

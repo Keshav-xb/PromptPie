@@ -9,7 +9,7 @@ st.set_page_config(
     layout="wide"
 )
 
-# Display logo at top-left beside hamburger menu
+# Display logo at top-left beside hamburger menu (fixed)
 st.markdown("""
     <style>
         #MainMenu {visibility: hidden;}
@@ -17,21 +17,24 @@ st.markdown("""
         header {visibility: visible;}
 
         .top-left-logo {
-            position: absolute;
-            top: 100px;
-            left: 100px;
-            z-index: 9999;
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            z-index: 1001;
+            background-color: white;
+            padding: 5px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
         }
 
-        /* Push page content slightly down */
         .block-container {
-            padding-top: 60px;
+            padding-top: 80px;
         }
     </style>
 
     <div class="top-left-logo">
         <a href="https://www.linkedin.com/in/keshav-sharma-xb" target="_blank">
-            <img src="https://raw.githubusercontent.com/Keshav-xb/PromptPie/main/logo.png" width="40">
+            <img src="https://raw.githubusercontent.com/Keshav-xb/PromptPie/main/logo.png" width="60">
         </a>
     </div>
 """, unsafe_allow_html=True)

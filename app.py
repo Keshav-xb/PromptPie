@@ -2,13 +2,14 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 import random
 
-# --- Page configuration ---
+# --- Page Config ---
 st.set_page_config(
+    page_title="PromptPie",
     page_icon="🧠",
     layout="wide"
 )
 
-# --- Custom HTML Header with Logo ---
+# --- Header with Logo Only ---
 st.markdown("""
     <style>
         #MainMenu {visibility: hidden;}
@@ -20,21 +21,17 @@ st.markdown("""
             padding: 4px 16px;
             background-color: #f8f9fa;
             border-bottom: 1px solid #e5e5e5;
-            height: 70px; /* fix header height */
+            height: 70px;
             overflow: hidden;
         }
 
         .header-container img {
-            height: 120px;
-            margin-right: 120px;
+            height: 48px;
         }
 
-        .header-container h1 {
-            font-size: 22px; /* increase or decrease this */
-            color: #3b82f6;
-            margin: 0;
-            line-height: 1.2;
-            font-family: 'Segoe UI', sans-serif;
+        .output-section-title {
+            color: #111827;
+            font-weight: bold;
         }
     </style>
 
@@ -42,7 +39,6 @@ st.markdown("""
         <a href="https://www.linkedin.com/in/keshav-sharma-xb" target="_blank">
             <img src="https://raw.githubusercontent.com/Keshav-xb/PromptPie/main/logo.png" alt="PromptPie Logo">
         </a>
-        <h1>PromptPie</h1>
     </div>
 """, unsafe_allow_html=True)
 
@@ -60,7 +56,7 @@ selected = option_menu(
     orientation="horizontal"
 )
 
-# --- Prompt Generator Function ---
+# --- Prompt Generator Logic ---
 def generate_prompt(topic):
     hooks = [
         f"Unlock the secret to {topic}",
@@ -88,33 +84,49 @@ if selected == "Home":
 
     topic = st.text_input("Enter a topic:", placeholder="e.g. digital marketing, fitness, AI...")
 
+    prompts_output = ""
+
     if st.button("Generate Prompts"):
         if topic.strip() == "":
             st.warning("Please enter a topic to generate prompts.")
         else:
             st.subheader("🎯 Your AI-Generated Prompts")
+
             for i in range(5):
                 data = generate_prompt(topic)
-                st.markdown(f"""
-                **Prompt {i+1}:** {data['prompt']}  
-                **Hook:** {data['hook']}  
-                **Hashtags:** {data['hashtags']}
-                ---
-                """)
+                block = f"""
+**:blue[Prompt {i+1}]**
+
+<span class='output-section-title'>1. Prompt:</span> {data['prompt']}  
+<span class='output-section-title'>2. Hook:</span> {data['hook']}  
+<span class='output-section-title'>3. Hashtags:</span> {data['hashtags']}  
+---
+"""
+                prompts_output += block
+                st.markdown(block, unsafe_allow_html=True)
+
+            # Download Button
+            st.download_button(
+                label="📥 Download Prompts (.txt)",
+                data=prompts_output,
+                file_name=f"{topic}_prompts.txt",
+                mime="text/plain"
+            )
 
 elif selected == "Features":
     st.title("Features")
     st.markdown("""
-    - 🧠 AI-powered prompt generation
-    - 🎯 Targeted hooks for engagement
-    - 🏷️ Auto-generated hashtags
-    - 💾 Easy copy/paste usage
-    - ✨ Built for creators, marketers, influencers
+    - 🧠 AI-powered prompt generation  
+    - 🎯 Targeted hooks for engagement  
+    - 🏷️ Auto-generated hashtags  
+    - 💾 Download-ready format  
+    - ✨ Built for creators, marketers, and brands
     """)
 
 elif selected == "About":
     st.title("About PromptPie")
     st.markdown("""
-    PromptPie is your creative assistant — powered by AI — that helps you generate high-quality content prompts in seconds.  
-    Created with 💙 by [Keshav Sharma](https://www.linkedin.com/in/keshav-sharma-xb)
+    PromptPie is your creative assistant powered by AI.  
+    Generate high-converting prompts in seconds with built-in hooks and hashtags.  
+    Built with ❤️ by [Keshav Sharma](https://www.linkedin.com/in/keshav-sharma-xb)
     """)

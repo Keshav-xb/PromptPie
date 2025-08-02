@@ -22,7 +22,9 @@ st.markdown("""
         }
 
         .header-container img {
-            height: 64px;
+    height: 90px;
+    max-height: 90px;
+}
         }
     </style>
 

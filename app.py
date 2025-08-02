@@ -1,11 +1,15 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
 import random
-# Page configuration
+
+# --- Page configuration ---
 st.set_page_config(
     page_title="PromptPie",
     page_icon="🧠",
     layout="wide"
+)
+
+# --- Custom HTML Header with Logo ---
 st.markdown("""
     <style>
         #MainMenu {visibility: hidden;}
@@ -21,8 +25,8 @@ st.markdown("""
         }
 
         .header-container img {
-            height: 100px;
-            max-height: 100px;
+            height: 90px;
+            max-height: 90px;
         }
     </style>
 
@@ -32,109 +36,76 @@ st.markdown("""
         </a>
     </div>
 """, unsafe_allow_html=True)
-st.markdown("AI-Powered Prompt Generator for Creators and Brands ✨")
 
-# Navigation menu
+# --- Sidebar ---
+with st.sidebar:
+    st.markdown("### Welcome to PromptPie")
+    st.write("🚀 AI-Powered Prompt Generator for Creators and Brands.")
+    st.write("📌 Built with ❤️ by [Keshav Sharma](https://www.linkedin.com/in/keshav-sharma-xb)")
+
+# --- Navigation ---
 selected = option_menu(
     menu_title=None,
     options=["Home", "Features", "About"],
     icons=["house", "stars", "info-circle"],
-    orientation="horizontal",
-    default_index=0
+    orientation="horizontal"
 )
-
 
 # --- Prompt Generator Function ---
-def generate_prompts(topic):
-    categories = {
-        "🔥 Hook Prompts": [
-            "What nobody tells you about",
-            "The truth behind",
-            "3 ways to improve your"
-        ],
-        "💡 Insight Prompts": [
-            "Hidden secrets of",
-            "Stop doing this with",
-            "Why you're failing at"
-        ],
-        "📈 Growth Prompts": [
-            "How I scaled in",
-            "My daily routine for",
-            "Small changes that improved my"
-        ]
+def generate_prompt(topic):
+    hooks = [
+        f"Unlock the secret to {topic}",
+        f"Why everyone is talking about {topic}",
+        f"How to master {topic} in 3 easy steps",
+        f"The hidden truth behind {topic}",
+        f"Stop scrolling if you want to learn {topic}"
+    ]
+    hashtags = [
+        f"#{topic.replace(' ', '')}",
+        "#PromptPie",
+        "#AIGenerated",
+        "#ContentCreation",
+        "#DailyPrompts"
+    ]
+    return {
+        "prompt": f"Create a viral content piece about {topic}",
+        "hook": random.choice(hooks),
+        "hashtags": " ".join(random.sample(hashtags, 3))
     }
 
-    hashtags = ["#PromptPie", "#AIContent", "#MarketingTips", "#BuildInPublic", "#ContentCreation"]
-    all_outputs = {}
-
-    for section, templates in categories.items():
-        lines = []
-        for temp in templates:
-            lines.append(f"{temp} {topic}. {random.choice(hashtags)}")
-        all_outputs[section] = lines
-
-    return all_outputs
-
-# --- Home Page ---
+# --- Main Content ---
 if selected == "Home":
-    st.markdown("<h1 style='text-align: center;'>Welcome to PromptPie 🧠</h1>", unsafe_allow_html=True)
-    st.markdown("<p style='text-align: center; font-size:18px;'>Craft AI-powered viral prompts to elevate your brand, content, and storytelling.</p>", unsafe_allow_html=True)
-    st.markdown("")
+    st.title("Prompt Generator")
 
-    topic = st.text_input("🔍 Enter your topic (e.g., mindset, health, AI, etc.):")
+    topic = st.text_input("Enter a topic:", placeholder="e.g. digital marketing, fitness, AI...")
 
-    if topic:
-        prompts = generate_prompts(topic)
-        full_text = ""
+    if st.button("Generate Prompts"):
+        if topic.strip() == "":
+            st.warning("Please enter a topic to generate prompts.")
+        else:
+            st.subheader("🎯 Your AI-Generated Prompts")
+            for i in range(5):
+                data = generate_prompt(topic)
+                st.markdown(f"""
+                **Prompt {i+1}:** {data['prompt']}  
+                **Hook:** {data['hook']}  
+                **Hashtags:** {data['hashtags']}
+                ---
+                """)
 
-        st.markdown("### 🎯 Your AI-Generated Prompts:")
-
-        for section, lines in prompts.items():
-            st.subheader(section)
-            for i, line in enumerate(lines, 1):
-                st.markdown(f"**{i}.** {line}")
-                full_text += f"{i}. {line}\n"
-            st.markdown("---")
-
-        st.download_button(
-            label="📥 Download All Prompts",
-            data=full_text,
-            file_name=f"{topic}_prompts.txt",
-            mime="text/plain"
-        )
-
-# --- Features Page ---
 elif selected == "Features":
-    st.title("✨ Features of PromptPie")
+    st.title("Features")
     st.markdown("""
-    - 🔥 Multi-category AI prompt generation  
-    - 🧠 Creative + Insightful + Growth prompts  
-    - 🏷️ Auto-included relevant hashtags  
-    - 📥 One-click download feature  
-    - 🖼️ Clean, responsive interface  
+    - 🧠 AI-powered prompt generation
+    - 🎯 Targeted hooks for engagement
+    - 🏷️ Auto-generated hashtags
+    - 💾 Easy copy/paste usage
+    - ✨ Built for creators, marketers, influencers
     """)
 
-# --- About Page ---
 elif selected == "About":
-    st.title("📘 About PromptPie")
+    st.title("About PromptPie")
     st.markdown("""
-    **PromptPie** is an AI-powered tool that helps creators, marketers, and solopreneurs generate high-impact prompts in seconds.
-
-    It’s designed to help you:
-    - 🧠 Create viral content ideas
-    - ✍️ Overcome content block
-    - 📈 Scale your brand presence
-
-    **Made with ❤️ by** [Keshav Sharma](https://www.linkedin.com/in/keshav-sharma-b15270257/)
+    PromptPie is your creative assistant — powered by AI — that helps you generate high-quality content prompts in seconds.  
+    Created with 💙 by [Keshav Sharma](https://www.linkedin.com/in/keshav-sharma-xb)
     """)
-
-# --- Footer ---
-st.markdown("---")
-st.markdown(
-    """
-    <div style='text-align: center; font-size:16px;'>
-        Made with ❤️ by <a href=https://www.linkedin.com/in/keshav-sharma-b15270257/" target="_blank" style="color:#3b82f6;"><strong>Keshav</strong></a>
-    </div>
-    """,
-    unsafe_allow_html=True
-)

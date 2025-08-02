@@ -1,4 +1,4 @@
-# 🎨 PromptPie — The Smart Prompt Generator
+# 👨‍💻 PromptPie — The Smart Prompt Generator
 
 PromptPie is an AI-powered web app that instantly generates multiple high-quality **social media content prompts** — optimized with **hooks**, **hashtags**, and ready to **download**. Designed with an advanced Streamlit UI, it helps marketers, creators, and entrepreneurs plan content in seconds.
 
@@ -8,7 +8,7 @@ PromptPie is an AI-powered web app that instantly generates multiple high-qualit
 
 ## 🌟 Live Demo
 
-🔗 [Try PromptPie Now](https://promptpie-svrhgmokzpwldrcjvwjpvj.streamlit.app/)
+🔗 [Try PromptPie Now](https://promptpie.streamlit.app/)
 
 
 ---

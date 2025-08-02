@@ -117,7 +117,7 @@ st.markdown("---")
 st.markdown(
     """
     <div style='text-align: center; font-size:16px;'>
-        Made with ❤️ by <a href="https://www.linkedin.com/in/keshavsharma/" target="_blank" style="color:#3b82f6;"><strong>Keshav</strong></a>
+        Made with ❤️ by <a href=https://www.linkedin.com/in/keshav-sharma-b15270257/" target="_blank" style="color:#3b82f6;"><strong>Keshav</strong></a>
     </div>
     """,
     unsafe_allow_html=True

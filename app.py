@@ -26,7 +26,7 @@ st.markdown("""
 
         .header-container img {
             height: 150px;
-            max-height: 120px;
+            max-height: 150px;
         }
     </style>
 

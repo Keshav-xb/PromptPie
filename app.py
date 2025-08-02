@@ -4,7 +4,6 @@ import random
 
 # --- Page configuration ---
 st.set_page_config(
-    page_title="PromptPie",
     page_icon="🧠",
     layout="wide"
 )

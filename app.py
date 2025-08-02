@@ -7,7 +7,6 @@ st.set_page_config(
     page_icon="🧠",
     layout="wide"
 )
-
 st.markdown("""
     <style>
         #MainMenu {visibility: hidden;}
@@ -23,15 +22,7 @@ st.markdown("""
         }
 
         .header-container img {
-            height: 48px;
-            margin-right: 16px;
-        }
-
-        .header-container h1 {
-            font-size: 26px;
-            color: #3b82f6;
-            margin: 0;
-            font-family: 'Segoe UI', sans-serif;
+            height: 64px;
         }
     </style>
 
@@ -39,7 +30,6 @@ st.markdown("""
         <a href="https://www.linkedin.com/in/keshav-sharma-xb" target="_blank">
             <img src="https://raw.githubusercontent.com/Keshav-xb/PromptPie/main/logo.png" alt="PromptPie Logo">
         </a>
-        <h1>PromptPie</h1>
     </div>
 """, unsafe_allow_html=True)
 st.markdown("AI-Powered Prompt Generator for Creators and Brands ✨")

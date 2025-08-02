@@ -41,7 +41,7 @@ st.markdown("""
         </a>
         <h1>PromptPie</h1>
     </div>
-""", unsafe_allow_html=True
+""", unsafe_allow_html=True)
 st.markdown("AI-Powered Prompt Generator for Creators and Brands ✨")
 
 # Navigation menu

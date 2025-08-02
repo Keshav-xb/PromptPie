@@ -32,7 +32,6 @@ st.set_page_config(
 )
 
 # --- Load logo ---
-logo = Image.open("logo.png")  # Replace with your logo file
 
 # --- Sidebar with logo and app name ---
 with st.sidebar:

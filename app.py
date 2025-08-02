@@ -89,7 +89,7 @@ if selected == "Home":
             st.subheader("➡️ Your AI-Generated Prompts")
 
             for i in range(5):
-            data = generate_prompt(topic)
+                data = generate_prompt(topic)
             block = f"""
 <div style='font-size: 15px; line-height: 1.6;'>
     <span style='font-size: 18px; font-weight: bold; color: #2563eb;'>Prompt {i+1}</span><br><br>

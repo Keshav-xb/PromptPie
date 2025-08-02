@@ -35,7 +35,6 @@ st.set_page_config(
 
 # --- Sidebar with logo and app name ---
 with st.sidebar:
-    st.image(logo, width=160)
     st.markdown("<h2 style='text-align: center; color: #3b82f6;'>PromptPie</h2>", unsafe_allow_html=True)
     st.markdown("AI-Powered Prompt Generator for Creators and Brands ✨")
 

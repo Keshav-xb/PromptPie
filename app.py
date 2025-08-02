@@ -109,7 +109,7 @@ elif selected == "About":
     - ✍️ Overcome content block
     - 📈 Scale your brand presence
 
-    **Made with ❤️ by** [Keshav Sharma](https://www.linkedin.com/in/keshavsharma/)
+    **Made with ❤️ by** [Keshav Sharma](https://www.linkedin.com/in/keshav-sharma-b15270257/)
     """)
 
 # --- Footer ---

@@ -1,11 +1,10 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
 import random
-
 # Page configuration
 st.set_page_config(
     page_title="PromptPie",
-    page_icon="🧠",
+    page_icon="https://raw.githubusercontent.com/Keshav-xb/PromptPie/main/logo.png",
     layout="wide"
 )
 

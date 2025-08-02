@@ -1,9 +1,17 @@
 import streamlit as st
 from PIL import Image
 
-# Load logo image
+# Load and display logo
 logo = Image.open("logo.png")
-st.image(logo, width=160)  # You can change width as needed
+st.image(logo, width=160)
+
+# Or with a header
+st.markdown("""
+<div style="display: flex; align-items: center; gap: 10px;">
+    <img src="https://raw.githubusercontent.com/Keshav-xb/PromptPie/main/logo.png" width="50">
+    <h2 style="color:#0066ff;margin:0;">PromptPie</h2>
+</div>
+""", unsafe_allow_html=True)
 from streamlit_option_menu import option_menu
 import random
 

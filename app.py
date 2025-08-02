@@ -18,20 +18,20 @@ st.markdown("""
 
         .top-left-logo {
             position: fixed;
-            top: 10px;
-            left: 10px;
-            z-index: 1001;
-            padding: 0px;
+            top: 14px;
+            left: 14px;
+            z-index: 9999;
         }
 
+        /* Ensure app content doesn't overlap with logo */
         .block-container {
-            padding-top: 70px;
+            padding-top: 75px !important;
         }
     </style>
 
     <div class="top-left-logo">
         <a href="https://www.linkedin.com/in/keshav-sharma-xb" target="_blank">
-            <img src="https://raw.githubusercontent.com/Keshav-xb/PromptPie/main/logo.png" width="60">
+            <img src="https://raw.githubusercontent.com/Keshav-xb/PromptPie/main/logo.png" width="60" style="border: none;">
         </a>
     </div>
 """, unsafe_allow_html=True)

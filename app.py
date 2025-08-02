@@ -3,40 +3,46 @@ from streamlit_option_menu import option_menu
 import random
 # Page configuration
 st.set_page_config(
+  st.set_page_config(
     page_title="PromptPie",
-    page_icon="https://raw.githubusercontent.com/Keshav-xb/PromptPie/main/logo.png",
+    page_icon="🧠",
     layout="wide"
 )
 
-# Display logo at top-left beside hamburger menu (fixed)
 st.markdown("""
     <style>
         #MainMenu {visibility: hidden;}
         footer {visibility: hidden;}
         header {visibility: visible;}
 
-        .top-left-logo {
-            position: fixed;
-            top: 14px;
-            left: 14px;
-            z-index: 9999;
+        .header-container {
+            display: flex;
+            align-items: center;
+            padding: 12px 16px;
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #e5e5e5;
         }
 
-        /* Ensure app content doesn't overlap with logo */
-        .block-container {
-            padding-top: 75px !important;
+        .header-container img {
+            height: 48px;
+            margin-right: 16px;
+        }
+
+        .header-container h1 {
+            font-size: 26px;
+            color: #3b82f6;
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
         }
     </style>
 
-    <div class="top-left-logo">
+    <div class="header-container">
         <a href="https://www.linkedin.com/in/keshav-sharma-xb" target="_blank">
-            <img src="https://raw.githubusercontent.com/Keshav-xb/PromptPie/main/logo.png" width="60" style="border: none;">
+            <img src="https://raw.githubusercontent.com/Keshav-xb/PromptPie/main/logo.png" alt="PromptPie Logo">
         </a>
+        <h1>PromptPie</h1>
     </div>
 """, unsafe_allow_html=True)
-# Sidebar content
-with st.sidebar:
-    st.markdown("<h2 style='text-align: center; color: #3b82f6;'>PromptPie</h2>", unsafe_allow_html=True)
     st.markdown("AI-Powered Prompt Generator for Creators and Brands ✨")
 
 # Navigation menu

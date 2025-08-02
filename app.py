@@ -39,7 +39,7 @@ st.set_page_config(
 
 # --- Load logo ---
 
-# --- Sidebar with logo and app name ---
+# --- Sidebar ---
 with st.sidebar:
     st.markdown("<h2 style='text-align: center; color: #3b82f6;'>PromptPie</h2>", unsafe_allow_html=True)
     st.markdown("AI-Powered Prompt Generator for Creators and Brands ✨")
@@ -51,6 +51,7 @@ selected = option_menu(
     icons=["house", "stars", "info-circle"],
     orientation="horizontal",
     default_index=0
+)
 )
 
 # --- Prompt Generator Function ---

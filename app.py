@@ -1,7 +1,15 @@
 import streamlit as st
+from streamlit_option_menu import option_menu
+import random
 
-st.set_page_config(page_title="PromptPie", page_icon="✨")
+# --- Set page config (merged into one) ---
+st.set_page_config(
+    page_title="PromptPie",
+    page_icon="🧠",
+    layout="wide"
+)
 
+# --- Inject top-left logo with LinkedIn ---
 st.markdown("""
     <style>
         #MainMenu {visibility: hidden;}
@@ -21,8 +29,6 @@ st.markdown("""
         </a>
     </div>
 """, unsafe_allow_html=True)
-from streamlit_option_menu import option_menu
-import random
 
 # --- Streamlit page config ---
 st.set_page_config(

@@ -25,7 +25,7 @@ st.markdown("""
         }
 
         .header-container img {
-            height: 160px;  /* ← Bigger logo */
+            height: 150px;  /* ← Bigger logo */
             width: auto;
             margin: 0;
         }

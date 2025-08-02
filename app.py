@@ -52,7 +52,7 @@ selected = option_menu(
     orientation="horizontal",
     default_index=0
 )
-)
+
 
 # --- Prompt Generator Function ---
 def generate_prompts(topic):

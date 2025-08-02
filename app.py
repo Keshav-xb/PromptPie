@@ -3,7 +3,6 @@ from streamlit_option_menu import option_menu
 import random
 # Page configuration
 st.set_page_config(
-  st.set_page_config(
     page_title="PromptPie",
     page_icon="🧠",
     layout="wide"

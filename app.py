@@ -21,14 +21,11 @@ st.markdown("""
             top: 10px;
             left: 10px;
             z-index: 1001;
-            background-color: white;
-            padding: 5px;
-            border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            padding: 0px;
         }
 
         .block-container {
-            padding-top: 80px;
+            padding-top: 70px;
         }
     </style>
 
@@ -38,7 +35,6 @@ st.markdown("""
         </a>
     </div>
 """, unsafe_allow_html=True)
-
 # Sidebar content
 with st.sidebar:
     st.markdown("<h2 style='text-align: center; color: #3b82f6;'>PromptPie</h2>", unsafe_allow_html=True)

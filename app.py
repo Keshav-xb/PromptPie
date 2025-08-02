@@ -14,19 +14,28 @@ st.markdown("""
     <style>
         #MainMenu {visibility: hidden;}
         footer {visibility: hidden;}
-        header {visibility: visible;}
 
         .header-container {
             display: flex;
             align-items: center;
-            padding: 12px 16px;
+            padding: 4px 16px;
             background-color: #f8f9fa;
             border-bottom: 1px solid #e5e5e5;
+            height: 70px; /* fix header height */
+            overflow: hidden;
         }
 
         .header-container img {
-            height: 150px;
-            max-height: 150px;
+            height: 120px;
+            margin-right: 120px;
+        }
+
+        .header-container h1 {
+            font-size: 22px; /* increase or decrease this */
+            color: #3b82f6;
+            margin: 0;
+            line-height: 1.2;
+            font-family: 'Segoe UI', sans-serif;
         }
     </style>
 
@@ -34,6 +43,7 @@ st.markdown("""
         <a href="https://www.linkedin.com/in/keshav-sharma-xb" target="_blank">
             <img src="https://raw.githubusercontent.com/Keshav-xb/PromptPie/main/logo.png" alt="PromptPie Logo">
         </a>
+        <h1>PromptPie</h1>
     </div>
 """, unsafe_allow_html=True)
 

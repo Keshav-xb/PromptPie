@@ -1,5 +1,9 @@
 import streamlit as st
 from PIL import Image
+
+# Load logo image
+logo = Image.open("logo.png")
+st.image(logo, width=160)  # You can change width as needed
 from streamlit_option_menu import option_menu
 import random
 

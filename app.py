@@ -2,15 +2,26 @@ import streamlit as st
 from PIL import Image
 
 # Load and display logo
-logo = Image.open("logo.png")
-st.image(logo, width=160)
+import streamlit as st
 
-# Or with a header
+# Inject custom logo on top left using HTML + CSS
 st.markdown("""
-<div style="display: flex; align-items: center; gap: 10px;">
-    <img src="https://raw.githubusercontent.com/Keshav-xb/PromptPie/main/logo.png" width="50">
-    <h2 style="color:#0066ff;margin:0;">PromptPie</h2>
-</div>
+    <style>
+        .css-18e3th9 {
+            padding-top: 2rem;
+        }
+        #MainMenu {visibility: hidden;}
+        footer {visibility: hidden;}
+        .top-left-logo {
+            position: fixed;
+            top: 10px;
+            left: 15px;
+            z-index: 100;
+        }
+    </style>
+    <div class="top-left-logo">
+        <img src="https://raw.githubusercontent.com/Keshav-xb/PromptPie/main/logo.png" width="50">
+    </div>
 """, unsafe_allow_html=True)
 from streamlit_option_menu import option_menu
 import random

@@ -2,49 +2,46 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 import random
 
-# --- Set page config (merged into one) ---
+# Page configuration
 st.set_page_config(
     page_title="PromptPie",
     page_icon="🧠",
     layout="wide"
 )
 
-# --- Inject top-left logo with LinkedIn ---
+# Display logo at top-left beside hamburger menu
 st.markdown("""
     <style>
         #MainMenu {visibility: hidden;}
         footer {visibility: hidden;}
+        header {visibility: visible;}
 
         .top-left-logo {
-            position: fixed;
+            position: absolute;
             top: 10px;
-            left: 12px;
-            z-index: 9999;
+            left: 10px;
+            z-index: 999;
+        }
+
+        /* Push page content slightly down */
+        .block-container {
+            padding-top: 60px;
         }
     </style>
 
     <div class="top-left-logo">
         <a href="https://www.linkedin.com/in/keshav-sharma-xb" target="_blank">
-            <img src="https://raw.githubusercontent.com/Keshav-xb/PromptPie/main/logo.png" width="45">
+            <img src="https://raw.githubusercontent.com/Keshav-xb/PromptPie/main/logo.png" width="40">
         </a>
     </div>
 """, unsafe_allow_html=True)
 
-# --- Streamlit page config ---
-st.set_page_config(
-    page_title="PromptPie",
-    page_icon="🧠",
-    layout="wide"
-)
-
-# --- Load logo ---
-
-# --- Sidebar ---
+# Sidebar content
 with st.sidebar:
     st.markdown("<h2 style='text-align: center; color: #3b82f6;'>PromptPie</h2>", unsafe_allow_html=True)
     st.markdown("AI-Powered Prompt Generator for Creators and Brands ✨")
 
-# --- Navigation bar ---
+# Navigation menu
 selected = option_menu(
     menu_title=None,
     options=["Home", "Features", "About"],

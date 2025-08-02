@@ -22,16 +22,12 @@ st.markdown("""
             background-color: #f8f9fa;
             border-bottom: 1px solid #e5e5e5;
             height: 70px;
-            overflow: hidden;
         }
 
         .header-container img {
-            height: 48px;
-        }
-
-        .output-section-title {
-            color: #111827;
-            font-weight: bold;
+            height: 60px;  /* ← Bigger logo */
+            width: auto;
+            margin: 0;
         }
     </style>
 

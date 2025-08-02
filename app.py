@@ -76,7 +76,7 @@ def generate_prompt(topic):
 
 # --- Main Content ---
 if selected == "Home":
-    st.title("Prompt Generator")
+    st.title("Generate Your Prompt")
 
     topic = st.text_input("Enter a topic:", placeholder="e.g. digital marketing, fitness, AI...")
 
@@ -86,12 +86,13 @@ if selected == "Home":
         if topic.strip() == "":
             st.warning("Please enter a topic to generate prompts.")
         else:
-            st.subheader("🎯 Your AI-Generated Prompts")
+            st.subheader("➡️ Your AI-Generated Prompts")
 
             for i in range(5):
-                data = generate_prompt(topic)
-                block = f"""
-**:blue[Prompt {i+1}]**
+            data = generate_prompt(topic)
+            block = f"""
+<div style='font-size: 15px; line-height: 1.6;'>
+    <span style='font-size: 18px; font-weight: bold; color: #2563eb;'>Prompt {i+1}</span><br><br>
 
 <span class='output-section-title'>1. Prompt:</span> {data['prompt']}  
 <span class='output-section-title'>2. Hook:</span> {data['hook']}  
